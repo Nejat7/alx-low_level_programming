@@ -21,3 +21,6 @@ putchar(digit);
 break;
 }
 }
+putchar('\n');
+return (0);
+}
