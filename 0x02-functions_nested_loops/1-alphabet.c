@@ -4,12 +4,10 @@
  *Return: Always 0
  */
 void print_alphabet(void)
-{
-char alp = 'a';
-while (alp <= 'z')
+{ int alp;
+for (alp = 'a'; alp <= 'z'; alp++)
 {
 _putchar (alp);
-alp++;
 }
-_putchar ('/n');
+_putchar ('\n');
 }
