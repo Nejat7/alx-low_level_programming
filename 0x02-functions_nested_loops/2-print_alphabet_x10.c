@@ -13,6 +13,6 @@ for (alp = 'a'; alp <= 'z'; alp++)
 {
 _putchar(alp);
 }
--putchar('\n');
+_putchar('\n');
 }
 }
