@@ -1,37 +1,85 @@
 #include "main.h"
-#include <stdlib.h>
+
+
+
 
 /**
- * alloc_grid - creates a 2 dimensional array of integers initialized to 0
- * @width: width of array
- * @height: height of array
- *
- * Return: a double pointer to the 2D array
- */
-int **alloc_grid(int width, int height)
-{
-	int i, j;
-	int **a;
 
-	if (width <= 0 || height <= 0)
-		return (NULL);
-	a = (int **)malloc(sizeof(int *) * height);
-	if (a == NULL)
-		return (NULL);
-	for (i = 0; i < height; i++)
-	{
-		a[i] = (int *)malloc(sizeof(int) * width);
-		if (a[i] == NULL)
-		{
-			for (j = 0; j < i; j++)
-				free(a[j]);
-			free(a);
-			return (NULL);
-		}
-		for (j = 0; j < width; j++)
-		{
-			a[i][j] = 0;
-		}
-	}
-	return (a);
+* str_concat - a function that concatenates two strings.
+
+*@s1:First string
+
+*@s2:Second string
+
+*
+
+*Return: NULL in case of failure , but pointer to new string in
+
+*case of success
+
+*/
+
+
+
+
+char *str_concat(char *s1, char *s2)
+
+{
+
+ char *concat_str;
+
+ int index, concat_index = 0,  len = 0;
+
+
+
+
+ if (s1 == NULL)
+
+  s1 = "";
+
+
+
+
+ if (s2 == NULL)
+
+  s2 = "";
+
+
+
+
+ for (index = 0; s1[index] || s2[index]; index++)
+
+  len++;
+
+
+
+
+ concat_str = malloc(sizeof(char) * len);
+
+
+
+
+ if (concat_str == NULL)
+
+  return (NULL);
+
+
+
+
+ for (index = 0; s1[index]; index++)
+
+  concat_str[concat_index++] = s1[index];
+
+
+
+
+ for (index = 0; s2[index]; index++)
+
+  concat_str[concat_index++] = s2[index];
+
+
+
+
+ return (concat_str);
+
 }
