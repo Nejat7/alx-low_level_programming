@@ -11,13 +11,13 @@
 
 
 
-void _puts(char *s)
+void _puts(char *str)
 
 {
 
-while (*s)
+while (*str)
 
-_putchar(*s++);
+_putchar(*str++);
 
 
 
