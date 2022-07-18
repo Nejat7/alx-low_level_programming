@@ -1,21 +1,18 @@
 #include "lists.h"
 /**
- * free_listint - Free nodes and list
- * @head: This is my struct
+ * free_listint - frees a list
+ * @head: the pointer that points to the struct
+ *
+ * Return: always 0
  */
 void free_listint(listint_t *head)
 {
+	listint_t *f;
 
-	if (head == NULL)
-	{
-		return;
-	}
 	while (head != NULL)
 	{
-		listint_t *tmp;
-
-		tmp = head;
-		free(tmp);
-		head = head->next;
+		f = head;
+		head = f->next;
+		free(f);
 	}
 }
